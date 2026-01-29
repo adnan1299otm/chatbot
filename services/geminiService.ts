@@ -14,7 +14,7 @@ export const generateAIResponse = async (
   history: { role: string; parts: { text: string }[] }[],
   systemInstruction: string
 ): Promise<AIResponse> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY || '' });
 
   try {
     const response: GenerateContentResponse = await ai.models.generateContent({
@@ -57,7 +57,7 @@ export const chatWithN8n = async (
   chatId: string,
   config: any
 ): Promise<AIResponse> => {
-  const N8N_PRODUCTION_URL = 'https://n8n-1-14-2.onrender.com/webhook/1168bb38-0128-4e52-9f93-a7538c9e1007/chat';
+  const N8N_PRODUCTION_URL = import.meta.env.VITE_N8N_URL || 'https://n8n-1-14-2.onrender.com/webhook/1168bb38-0128-4e52-9f93-a7538c9e1007/chat';
 
   // Pure payload for n8n Chat Trigger / AI Agent
   const payload = {
