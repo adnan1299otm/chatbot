@@ -1,0 +1,7 @@
+{
+  "name": "ICT Bangladesh AI Assistant",
+  "description": "An intelligent AI-powered chatbot for ICT Bangladesh, helping citizens and innovators navigate digital services and ICT initiatives.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

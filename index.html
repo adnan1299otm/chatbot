@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ICT Bangladesh AI | Official Invention for Next Generation</title>
+    <meta name="description"
+        content="Official AI Assistant for ICT Bangladesh. Providing real-time intelligence on training programs, software engineering, and digital governance.">
+    <meta name="keywords"
+        content="ICT Bangladesh, AI Assistant, Smart Bangladesh, Software Engineering, AI training, Digital Governance">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ICT Bangladesh AI Assistant">
+    <meta property="og:description" content="The future of Digital Governance in Bangladesh.">
+    <meta property="og:image" content="https://ictbangladesh.com.bd/logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --app-height: 100dvh;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: var(--app-height);
+            width: 100vw;
+            overflow-x: hidden;
+            background: #000;
+            transition: background-color 0.5s ease;
+        }
+
+        h1,
+        h2,
+        h3,
+        .heading-font {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .dot-grid {
+            background-image: radial-gradient(circle, currentColor 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .dark .dot-grid {
+            color: rgba(255, 255, 255, 0.05);
+        }
+
+        .light .dot-grid {
+            color: rgba(0, 0, 0, 0.05);
+        }
+
+        canvas#fluid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 166, 81, 0.2) transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0"
+  }
+}
+</script>
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body class="bg-black text-white">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>
