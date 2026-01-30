@@ -117,30 +117,28 @@ const Hero: React.FC<HeroProps> = ({ onInitiate, theme, config, onConfigChange }
       </div>
 
       <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
-        <div className="flex flex-col items-center">
-          <span className={`text-[10px] font-bold uppercase tracking-widest ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>Endorsed by</span>
-          <a
-            href="https://ictbangladesh.com.bd/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`text-xs font-bold transition-colors ${isDark ? 'text-white hover:text-[#00a651]' : 'text-zinc-900 hover:text-green-700'}`}
-          >
-            ICT Bangladesh
-          </a>
-        </div>
+        <a
+          href="https://ictbangladesh.com.bd/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center group/endorse transition-all"
+        >
+          <span className={`text-[10px] font-bold uppercase tracking-widest transition-colors ${isDark ? 'text-zinc-500 group-hover/endorse:text-green-400' : 'text-zinc-400 group-hover/endorse:text-green-600'}`}>Endorsed by</span>
+          <span className={`text-xs font-bold transition-colors ${isDark ? 'text-white group-hover/endorse:text-[#00a651]' : 'text-zinc-900 group-hover/endorse:text-green-700'}`}>ICT Bangladesh</span>
+        </a>
         <div className={`hidden sm:block w-[1px] h-6 ${isDark ? 'bg-white/10' : 'bg-zinc-200'}`} />
-        <div className="flex flex-col items-center">
-          <span className={`text-[10px] font-bold uppercase tracking-widest ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>Developer</span>
-          <a
-            href="https://linkedin.com/in/arafath-al-adnan-7b5689196"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`text-xs font-bold transition-all flex items-center group/dev ${isDark ? 'text-[#00a651] hover:text-[#00a651]/80' : 'text-green-700 hover:text-green-800'}`}
-          >
-            Arafath Al Adnan
+        <a
+          href="https://www.linkedin.com/in/arafathaladnan"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex flex-col items-center group/dev transition-all"
+        >
+          <span className={`text-[10px] font-bold uppercase tracking-widest transition-colors ${isDark ? 'text-zinc-500 group-hover/dev:text-[#00a651]' : 'text-zinc-400 group-hover/dev:text-green-700'}`}>Developer</span>
+          <div className="flex items-center">
+            <span className={`text-xs font-bold transition-colors ${isDark ? 'text-[#00a651] group-hover/dev:text-white' : 'text-green-700 group-hover/dev:text-green-900'}`}>Arafath Al Adnan</span>
             <ExternalLink className="w-2.5 h-2.5 ml-1 opacity-0 group-hover/dev:opacity-100 transition-opacity" />
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
 
       {/* Feature Sections */}
