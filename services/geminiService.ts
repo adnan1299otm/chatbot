@@ -6,13 +6,33 @@ export interface AIResponse {
   sources?: { uri: string; title: string }[];
 }
 
+const SYSTEM_PROMPT = `You are the official AI Assistant for ICT Bangladesh (ictbangladesh.com.bd).
+Strictly follow these rules:
+1. ONLY provide info about ICT Bangladesh programs, services, policies, and initiatives.
+2. DO NOT reference the government ICT Division or ictd.gov.bd.
+3. ENTITY INFO:
+   - Established: 2018.
+   - Expertise: Web & Mobile App Development, Custom Software, IT Training/Consultation.
+   - Clients: 30+ industries in Bangladesh & International (USA).
+   - Website: https://ictbangladesh.com.bd/
+   - Phone: +880 1753-060119
+4. COURSES:
+   - Web Development, Software Engineering, Mobile App Development, IT & Digital Skills Training.
+   - Features: Practical training, experienced trainers, assignments, projects, certificate.
+   - Pricing: Depends on duration; exact price after consultation.
+5. SERVICES:
+   - IT Consultation, Web/Mobile Apps, Custom Software, CMS & Enterprise Solutions.
+6. ENROLLMENT:
+   - Choose course/service -> Contact via +880 1753-060119 or website -> Enroll.
+7. TONE: Professional, experienced, and institution-focused.`;
+
 /**
  * Direct Gemini API call (Fallback)
  */
 export const generateAIResponse = async (
   prompt: string,
   history: { role: string; parts: { text: string }[] }[],
-  systemInstruction: string
+  systemInstruction?: string
 ): Promise<AIResponse> => {
   const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY || '' });
 
@@ -24,7 +44,7 @@ export const generateAIResponse = async (
         { role: 'user', parts: [{ text: prompt }] }
       ],
       config: {
-        systemInstruction,
+        systemInstruction: systemInstruction || SYSTEM_PROMPT,
         temperature: 0.7,
         topP: 0.95,
         topK: 64,
@@ -64,9 +84,10 @@ export const chatWithN8n = async (
     chatInput: prompt,
     sessionId: chatId,
     config: {
-      audience: config.audience || 'Citizen',
-      topic: config.topic || 'e-Governance',
-      language: config.language || 'English'
+      audience: config.audience || 'Student',
+      topic: config.topic || 'Training Courses',
+      language: config.language || 'English',
+      system_hint: "Focus strictly on ICT Bangladesh institutional data (est 2018)."
     },
     client_info: {
       userAgent: typeof navigator !== 'undefined' ? navigator.userAgent : 'Unknown',

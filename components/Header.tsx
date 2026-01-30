@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ theme, onToggleTheme, onGoHome }) => {
         <div className="flex flex-col justify-center">
           <h1 className="text-xl md:text-2xl font-bold tracking-tight leading-none flex items-center">
             <span className="text-[#00a651]">ICT</span>
-            <span className={`mx-1 md:mx-2 ${isDark ? 'text-white' : 'text-zinc-900'}`}>BD</span>
+            <span className={`mx-1 md:mx-2 ${isDark ? 'text-white' : 'text-zinc-900'}`}>Bangladesh</span>
             <span className="text-[#ed1c24]">AI</span>
           </h1>
           <p className={`text-[8px] md:text-[11px] uppercase tracking-[0.2em] md:tracking-[0.25em] font-black mt-1 md:mt-2 transition-opacity duration-300 ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>

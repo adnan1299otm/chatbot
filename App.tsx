@@ -15,8 +15,8 @@ const App: React.FC = () => {
 
   // Global Chat Configuration
   const [chatConfig, setChatConfig] = useState({
-    audience: 'Citizen',
-    topic: 'e-Governance',
+    audience: 'Student',
+    topic: 'Training Courses',
     language: 'English'
   });
 

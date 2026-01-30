@@ -340,7 +340,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({
             <button
               onClick={handleSend}
               disabled={isLoading || !input.trim()}
-              className={`flex items-center justify-center w-10 md:w-12 h-10 md:h-12 rounded-full transition-all duration-300 ${isLoading || !input.trim()
+              className={`flex items-center justify-center w-10 md:w-12 h-10 md:h-12 rounded-full transition-all duration-300 group ${isLoading || !input.trim()
                 ? 'opacity-20 cursor-not-allowed bg-zinc-800'
                 : (isDark
                   ? 'bg-gradient-to-tr from-[#00a651] to-[#018241] text-white hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,166,81,0.4)]'

@@ -15,8 +15,8 @@ const Hero: React.FC<HeroProps> = ({ onInitiate, theme, config, onConfigChange }
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const options = {
-    audience: ['Citizen', 'Entrepreneur', 'Developer', 'Govt Official'],
-    topic: ['e-Governance', 'Cybersecurity', 'ICT Policy', 'Infrastructure'],
+    audience: ['Student', 'Professional', 'Business Owner', 'International Client'],
+    topic: ['Training Courses', 'IT Consultation', 'Software Development', 'Corporate Training'],
     language: ['English', 'Bengali', 'Arabic', 'French']
   };
 
@@ -72,16 +72,16 @@ const Hero: React.FC<HeroProps> = ({ onInitiate, theme, config, onConfigChange }
     <div className="flex flex-col items-center justify-center min-h-[80dvh] text-center max-w-5xl mx-auto px-4 py-8 md:py-12">
       <div className={`inline-flex items-center space-x-2 px-3 md:px-4 py-1 md:py-1.5 rounded-full border mb-6 md:mb-8 transition-all duration-500 shadow-sm ${isDark ? 'bg-white/5 border-white/10' : 'bg-green-50 border-green-100'}`}>
         <ShieldCheck className={`w-3 md:w-3.5 h-3 md:h-3.5 ${isDark ? 'text-[#00a651]' : 'text-green-600'}`} />
-        <span className={`text-[8px] md:text-[10px] uppercase tracking-[0.2em] font-black ${isDark ? 'text-green-400' : 'text-green-700'}`}>Smart Bangladesh 2026 Secured</span>
+        <span className={`text-[8px] md:text-[10px] uppercase tracking-[0.2em] font-black ${isDark ? 'text-green-400' : 'text-green-700'}`}>Professional IT Training & Solutions</span>
       </div>
 
       <h2 className="text-4xl md:text-7xl font-extrabold mb-4 md:mb-6 tracking-tight leading-[1.1] md:leading-[1.05]">
-        <span className={`${isDark ? 'text-zinc-100' : 'text-zinc-900'} transition-colors duration-500`}>The Future of</span> <br />
-        <span className={`bg-gradient-to-r ${isDark ? 'from-[#00a651] via-white to-[#ed1c24]' : 'from-[#00a651] via-zinc-800 to-[#ed1c24]'} bg-clip-text text-transparent`}>Digital Governance.</span>
+        <span className={`${isDark ? 'text-zinc-100' : 'text-zinc-900'} transition-colors duration-500`}>Your Gateway to</span> <br />
+        <span className={`bg-gradient-to-r ${isDark ? 'from-[#00a651] via-white to-[#ed1c24]' : 'from-[#00a651] via-zinc-800 to-[#ed1c24]'} bg-clip-text text-transparent`}>ICT Excellence.</span>
       </h2>
 
       <p className={`text-sm md:text-lg mb-8 md:mb-12 max-w-2xl leading-relaxed mx-auto px-2 ${isDark ? 'text-zinc-400' : 'text-zinc-500 font-medium'}`}>
-        Official AI Assistant for ICT Bangladesh. Empowering citizens through real-time intelligence on policies, innovation, and digital transformation.
+        Official AI Assistant for ICT Bangladesh. Expert guidance on professional IT courses, software development services, and digital transformation.
       </p>
 
       <div className={`w-full max-w-4xl p-1 md:p-1.5 rounded-2xl md:rounded-3xl border transition-all duration-500 shadow-xl md:shadow-2xl backdrop-blur-xl ${isDark ? 'bg-zinc-900/80 border-white/10' : 'bg-white/90 border-zinc-200 shadow-zinc-200/50'}`}>
@@ -90,7 +90,7 @@ const Hero: React.FC<HeroProps> = ({ onInitiate, theme, config, onConfigChange }
             <Search className={`w-4 md:w-5 h-4 md:h-5 ${isDark ? 'text-[#00a651]/50' : 'text-zinc-400'}`} />
             <input
               type="text"
-              placeholder="Ask about Smart Bangladesh..."
+              placeholder="Ask about ICT Courses or Services..."
               className={`bg-transparent border-none outline-none w-full text-base md:text-lg placeholder:opacity-30 font-bold ${isDark ? 'text-white' : 'text-zinc-900'}`}
               onKeyDown={(e) => e.key === 'Enter' && onInitiate()}
             />
@@ -119,18 +119,25 @@ const Hero: React.FC<HeroProps> = ({ onInitiate, theme, config, onConfigChange }
       <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
         <div className="flex flex-col items-center">
           <span className={`text-[10px] font-bold uppercase tracking-widest ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>Endorsed by</span>
-          <p className={`text-xs font-bold ${isDark ? 'text-white' : 'text-zinc-900'}`}>ICT Division BD</p>
+          <a
+            href="https://ictbangladesh.com.bd/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-xs font-bold transition-colors ${isDark ? 'text-white hover:text-[#00a651]' : 'text-zinc-900 hover:text-green-700'}`}
+          >
+            ICT Bangladesh
+          </a>
         </div>
         <div className={`hidden sm:block w-[1px] h-6 ${isDark ? 'bg-white/10' : 'bg-zinc-200'}`} />
         <div className="flex flex-col items-center">
           <span className={`text-[10px] font-bold uppercase tracking-widest ${isDark ? 'text-zinc-500' : 'text-zinc-400'}`}>Developer</span>
           <a
-            href="https://www.linkedin.com/in/arafathaladnan"
+            href="https://linkedin.com/in/arafath-al-adnan-7b5689196"
             target="_blank"
             rel="noopener noreferrer"
             className={`text-xs font-bold transition-all flex items-center group/dev ${isDark ? 'text-[#00a651] hover:text-[#00a651]/80' : 'text-green-700 hover:text-green-800'}`}
           >
-            Arafath Adnan
+            Arafath Al Adnan
             <ExternalLink className="w-2.5 h-2.5 ml-1 opacity-0 group-hover/dev:opacity-100 transition-opacity" />
           </a>
         </div>
@@ -141,18 +148,18 @@ const Hero: React.FC<HeroProps> = ({ onInitiate, theme, config, onConfigChange }
         {[
           {
             icon: ShieldCheck,
-            title: "Policy Intelligence",
-            desc: "Instant access to official ICT guidelines, e-Governance policies, and regulatory frameworks."
+            title: "Expert IT Solutions",
+            desc: "Custom software architecture, web applications, and mobile solutions tailored for global scalability."
           },
           {
             icon: GraduationCap,
-            title: "Training Support",
-            desc: "Expert guidance on Software Engineering levels, AI foundations, and specialized certifications."
+            title: "Professional Training",
+            desc: "Career-focused courses in Web Development, Software Engineering, and Practical IT Skills."
           },
           {
             icon: Globe,
-            title: "24/7 Accessibility",
-            desc: "Multi-language support catering to citizens, entrepreneurs, and global stakeholders."
+            title: "Global Reach",
+            desc: "Trusted by clients across 30+ industries in Bangladesh and international markets like the USA."
           }
         ].map((feature, i) => (
           <div key={i} className={`p-8 rounded-3xl border transition-all duration-500 hover:scale-[1.02] ${isDark ? 'bg-white/5 border-white/10 hover:border-[#00a651]/30' : 'bg-white border-zinc-200 hover:border-green-300 shadow-sm'}`}>
@@ -169,10 +176,10 @@ const Hero: React.FC<HeroProps> = ({ onInitiate, theme, config, onConfigChange }
       <div className={`mt-32 w-full p-8 md:p-12 rounded-[40px] border relative overflow-hidden animate-fade-in [animation-delay:400ms] ${isDark ? 'bg-zinc-900/50 border-white/10' : 'bg-green-50/50 border-green-100'}`}>
         <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            { label: "Districts", value: "64" },
-            { label: "Active Courses", value: "50+" },
-            { label: "AI Grounding", value: "Real-time" },
-            { label: "Vision", value: "2041" }
+            { label: "Founded", value: "2018" },
+            { label: "Industries", value: "30+" },
+            { label: "Expertise", value: "Global" },
+            { label: "Support", value: "24/7" }
           ].map((stat, i) => (
             <div key={i} className="flex flex-col items-center">
               <span className={`text-3xl md:text-4xl font-black mb-2 ${isDark ? 'text-white' : 'text-zinc-900'}`}>{stat.value}</span>

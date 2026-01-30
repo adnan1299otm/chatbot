@@ -40,12 +40,12 @@ const Footer: React.FC<FooterProps> = ({ theme }) => {
 
                     {/* Institutional Links */}
                     <div>
-                        <h4 className={`text-[10px] uppercase tracking-[0.25em] font-black mb-6 ${isDark ? 'text-zinc-300' : 'text-zinc-900'}`}>Institutional</h4>
+                        <h4 className={`text-[10px] uppercase tracking-[0.25em] font-black mb-6 ${isDark ? 'text-zinc-300' : 'text-zinc-900'}`}>Links</h4>
                         <ul className="space-y-4">
                             {[
-                                { label: 'Official Site', url: 'https://ictbangladesh.com.bd' },
-                                { label: 'ICT Division', url: 'https://ictd.gov.bd' },
-                                { label: 'Smart Bangladesh', url: 'https://smartbangladesh.gov.bd' }
+                                { label: 'Official Website', url: 'https://ictbangladesh.com.bd' },
+                                { label: 'Course Enrollment', url: 'https://ictbangladesh.com.bd/courses' },
+                                { label: 'IT Services', url: 'https://ictbangladesh.com.bd/services' }
                             ].map((link, i) => (
                                 <li key={i}>
                                     <a
@@ -69,7 +69,7 @@ const Footer: React.FC<FooterProps> = ({ theme }) => {
                             <div className="flex items-start space-x-3">
                                 <MapPin className={`w-4 h-4 mt-0.5 ${isDark ? 'text-[#00a651]' : 'text-green-600'}`} />
                                 <span className={`text-sm leading-snug ${isDark ? 'text-zinc-500' : 'text-zinc-500'}`}>
-                                    ICT Tower, Agargaon<br />Dhaka, Bangladesh
+                                    ICT Bangladesh Campus<br />Dhaka, Bangladesh
                                 </span>
                             </div>
                             <p className={`text-xs ${isDark ? 'text-zinc-600' : 'text-zinc-400'}`}>
